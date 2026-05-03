@@ -1,4 +1,4 @@
-# Ostad Project
+# Ostad Project-runner
 
 This repository contains two separate projects:
 
