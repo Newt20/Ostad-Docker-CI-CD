@@ -83,7 +83,7 @@ const handleSubmit = async (e) => {
             <input
               type="text"
               name="name"
-              placeholder="Enter full name"
+              placeholder="Enter students' full name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -134,7 +134,7 @@ const handleSubmit = async (e) => {
               required
               className="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
             >
-              <option value="">Select Gender</option>
+              <option value="">Select the Gender</option>
               <option>Male</option>
               <option>Female</option>
               <option>Other</option>
