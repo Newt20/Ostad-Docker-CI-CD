@@ -21,11 +21,8 @@
         access_log off;
         add_header Cache-Control "public";
     }
-
-}
-```
----
-
+  }
+  ```
 
 ## 🔄 CI/CD Pipelines
 
@@ -41,7 +38,7 @@ on:
 
 jobs:
   setup-and-build:
-    runs-on: self-hosted   # Windows runner
+    runs-on: self-hosted 
 
     steps:
       - name: Checkout code
@@ -118,12 +115,19 @@ jobs:
 ## 📸 Screenshots
 
 ![runner-idle](Images/runner-idle.png)
+--
 ![Runner-running](Images/Runner-running.png)
+--
 ![runner-listening-forJobs](Images/runner-listening-forJobs.png)
+--
 ![Runner-failed](Images/Runner-failed.png)
+--
 ![Deployment-failed](Images/Deployment-failed.png)
+--
 ![Setup-Build-Successful](Images/Setup-Build-Successful.png)
+--
 ![Ubuntu-build-deploy-runner-success](Images/Ubuntu-build-deploy-runner-success.png)
+--
 ![Deployed-EC2](Images/Deployed-EC2.png)
 
 ---
