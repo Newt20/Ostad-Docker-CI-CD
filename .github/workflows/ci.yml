@@ -30,15 +30,20 @@ jobs:
       - name: Run frontend tests (if available)
         working-directory: ./OstadUI
         run: |
-          echo "No tests yet" # Replace with: npm test
+          echo "No tests yet"
 
       - name: Deploy to EC2
         shell: "C:\\Program Files\\Git\\bin\\bash.exe"
         run: |
+          # Write the private key from secrets
           echo "${{ secrets.EC2_KEY }}" > key.pem
           chmod 600 key.pem
+
+          # Copy build output to EC2
           scp -i key.pem -r ./OstadUI/dist ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
-          ssh -i key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "sudo systemctl restart nginx"
+
+          # Restart Nginx on EC2
+          ssh -i key.pem ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "sudo chown -R www-data:www-data /var/www/html && sudo systemctl restart nginx"
 
       - name: Show success message
         run: echo "✅ Build and tests passed"
