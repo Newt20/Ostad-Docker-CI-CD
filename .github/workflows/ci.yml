@@ -27,7 +27,7 @@ jobs:
 
       - name: Run frontend tests
         working-directory: ./OstadUI
-        run: echo "No tests yet"
+        run: echo "No tests"
 
       - name: Deploy to EC2
         env:
